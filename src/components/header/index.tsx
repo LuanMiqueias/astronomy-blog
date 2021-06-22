@@ -16,7 +16,11 @@ export const Header: React.FC<IProps> = ({ categories, logo }) => {
   return (
     <header className={styles.header}>
       <div className={styles.content}>
-        <img src={logo?.url} alt={logo?.altText} className={styles.logo} />
+        <Link href="/">
+          <a>
+            <img src={logo?.url} alt={logo?.altText} className={styles.logo} />
+          </a>
+        </Link>
         <nav className={styles.navbar}>
           <Link href="/">
             <a className={router.pathname === "/" ? styles.activeLink : ""}>
