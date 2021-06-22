@@ -9,6 +9,8 @@ import { Header } from "../components/header";
 import { Hero } from "../components/hero";
 import { Footer } from "../components/footer";
 
+import { CategoriesCards } from "../components/categoriesCards";
+
 export interface IDataSettings {
   blogName: string;
   BlogDescription: string;
@@ -27,6 +29,9 @@ export interface IDataSettings {
 export interface IDataCategories {
   name: string;
   slug: string;
+  cover: {
+    url: string;
+  };
 }
 interface IData {
   data: {
@@ -54,7 +59,10 @@ const Home: React.FC<IData> = ({ data }) => {
   return (
     <div className={styles.container}>
       <Header categories={data.categories} logo={data.setting.logo} />
-      {data.setting.hero && <Hero hero={data.setting.hero} />}
+      <div className={styles.container_sections}>
+        <Hero hero={data.setting?.hero} />
+        <CategoriesCards categories={data.categories} />
+      </div>
       <Footer />
     </div>
   );

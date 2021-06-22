@@ -16,18 +16,15 @@ export const Header: React.FC<IProps> = ({ categories, logo }) => {
   return (
     <header className={styles.header}>
       <div className={styles.content}>
-        <Link href="/">
-          <a>
-            <img src={logo?.url} alt={logo?.altText} className={styles.logo} />
-          </a>
-        </Link>
+        <img src={logo?.url} alt={logo?.altText} className={styles.logo} />
         <nav className={styles.navbar}>
           <Link href="/">
             <a className={router.pathname === "/" ? styles.activeLink : ""}>
               Home
             </a>
           </Link>
-          {categories.map((category) => {
+          {categories.map((category, index) => {
+            if (index > 4) return;
             return (
               <Link
                 href={{
@@ -36,15 +33,7 @@ export const Header: React.FC<IProps> = ({ categories, logo }) => {
                 }}
                 key={category.slug}
               >
-                <a
-                  className={
-                    router.pathname === `/${category.slug}`
-                      ? styles.activeLink
-                      : ""
-                  }
-                >
-                  {category.name}
-                </a>
+                {category.name}
               </Link>
             );
           })}

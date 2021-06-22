@@ -6,9 +6,12 @@ export const GET_SETTINGS = {
       formats
     }
     query GET_SETTINGS{
-      categories(limit:4){
+      categories{
         name,
         slug,
+        cover{
+          ...image
+        }
       },
       setting{
         blogName,
