@@ -19,11 +19,9 @@ export interface IDataSettings {
   menuLink?: [];
   hero?: {
     title?: string;
-    subtitle?: string;
     cover?: {
       url: string;
-      altText: string;
-    };
+    }[];
   };
 }
 export interface IDataCategories {
@@ -51,11 +49,12 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Home: React.FC<IData> = ({ data }) => {
   React.useEffect(() => {}, []);
+  console.log(data.setting);
 
   return (
     <div className={styles.container}>
       <Header categories={data.categories} logo={data.setting.logo} />
-      <Hero />
+      {data.setting.hero && <Hero hero={data.setting.hero} />}
       <Footer />
     </div>
   );

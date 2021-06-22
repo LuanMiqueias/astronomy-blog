@@ -1,22 +1,18 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@font-face{
+  font-family: "sansation";
+  src:url('/fonts/Sansation_Bold.ttf');
+  font-weight: 700;
 }
-
-a {
-  color: inherit;
-  text-decoration: none;
+@font-face{
+  font-family: "sansation";
+  src:url('/fonts/Sansation_Regular.ttf');
+  font-weight: 400;
 }
-
-* {
-  box-sizing: border-box;
-  margin:0;
-  padding:0;
+@font-face{
+  font-family: "sansation";
+  src:url('/fonts/Sansation_Light.ttf');
+  font-weight: 200;
 }
-
 :root{
   --primary-color:#030d11;
   --secondary-color:#ED1549;
@@ -36,3 +32,25 @@ a {
   --font-normal:400;
   --font-light:200;
 }
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  font-weight: var(--font-normal);
+  font-family: "sansation";
+}
+
