@@ -1,9 +1,15 @@
-import { GetStaticProps } from "next";
 import React from "react";
+import { GetStaticProps } from "next";
+
 import { api } from "../services/api";
 import { GET_SETTINGS } from "../services/graphql/queries";
+import styles from "../styles/pages/home.module.css";
 
-export interface ISettings {
+import { Header } from "../components/header";
+import { Hero } from "../components/hero";
+import { Footer } from "../components/footer";
+
+export interface IDataSettings {
   blogName: string;
   BlogDescription: string;
   logo: {
@@ -20,27 +26,15 @@ export interface ISettings {
     };
   };
 }
-export interface IDataSettings {
-  setting: {
-    blogName: string;
-    BlogDescription: string;
-    logo: {
-      url: string;
-      altText: string;
-    };
-    menuLink?: [];
-    hero?: {
-      title?: string;
-      subtitle?: string;
-      cover?: {
-        url: string;
-        altText: string;
-      };
-    };
-  };
+export interface IDataCategories {
+  name: string;
+  slug: string;
 }
-interface IProps {
-  settings: ISettings;
+interface IData {
+  data: {
+    setting: IDataSettings;
+    categories: IDataCategories[];
+  };
 }
 export const getStaticProps: GetStaticProps = async () => {
   const responce = await api({
@@ -49,19 +43,22 @@ export const getStaticProps: GetStaticProps = async () => {
     headers: { "Content-Type": "application/json" },
     data: { ...GET_SETTINGS },
   });
-  const data: IDataSettings = responce.data.data;
-
+  const data: IData = responce.data.data;
   return {
-    props: { settings: data.setting },
+    props: { data },
   };
 };
 
-const Home: React.FC<IProps> = ({ settings }) => {
-  React.useEffect(() => {
-    console.log(settings);
-  }, []);
+const Home: React.FC<IData> = ({ data }) => {
+  React.useEffect(() => {}, []);
 
-  return <div>Home</div>;
+  return (
+    <div className={styles.container}>
+      <Header categories={data.categories} logo={data.setting.logo} />
+      <Hero />
+      <Footer />
+    </div>
+  );
 };
 
 export default Home;

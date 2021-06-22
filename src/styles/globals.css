@@ -13,4 +13,26 @@ a {
 
 * {
   box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+:root{
+  --primary-color:#030d11;
+  --secondary-color:#ED1549;
+  --gray:#eeeeee;
+  --white:#ffffff;
+  
+  --header-light:#FFF;
+  --text-link:rgb(95, 95, 95);
+
+  --title-light:#fff;
+  --title-dark:#03141B;
+
+  --text:#3E3E3E;
+  --text-light:#BFBFBF;
+
+  --font-bold:800;
+  --font-normal:400;
+  --font-light:200;
 }
