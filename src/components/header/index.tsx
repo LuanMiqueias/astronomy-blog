@@ -28,7 +28,7 @@ export const Header: React.FC<IProps> = ({ categories, logo }) => {
             return (
               <Link
                 href={{
-                  pathname: "/category/[slug]",
+                  pathname: "/categories/[slug]",
                   query: { slug: category.slug },
                 }}
                 key={category.slug}

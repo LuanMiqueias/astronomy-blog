@@ -5,7 +5,28 @@ export const GET_SETTINGS = {
       url,
       formats
     }
+    fragment post_card on Post{
+        id,
+        title,
+        slug,
+        excerpt,
+        published_at
+        category{
+          name,
+          slug
+        },
+        tags{
+          name,
+          slug
+        }
+        cover{
+          ...image
+        }
+    }
     query GET_SETTINGS{
+      posts(sort:"published_at:desc"){
+        ...post_card
+      }
       categories{
         name,
         slug,

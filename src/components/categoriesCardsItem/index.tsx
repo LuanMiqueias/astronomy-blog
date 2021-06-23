@@ -10,7 +10,7 @@ export const CategoriesCardsItem: React.FC<IProps> = ({ category }) => {
   return (
     <Link
       href={{
-        pathname: "/category/[slug]",
+        pathname: "/categories/[slug]",
         query: { slug: category.slug },
       }}
     >

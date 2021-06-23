@@ -10,6 +10,7 @@ import { Hero } from "../components/hero";
 import { Footer } from "../components/footer";
 
 import { CategoriesCards } from "../components/categoriesCards";
+import { PostCards } from "../components/postCards";
 
 export interface IDataSettings {
   blogName: string;
@@ -33,10 +34,30 @@ export interface IDataCategories {
     url: string;
   };
 }
+export interface IDataPosts {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  published_at: string;
+  category: {
+    name: string;
+    slug: string;
+  };
+  tags: {
+    name: string;
+    slug: string;
+  };
+  cover: {
+    url: string;
+    altText: string;
+  };
+}
 interface IData {
   data: {
     setting: IDataSettings;
     categories: IDataCategories[];
+    posts: IDataPosts[];
   };
 }
 export const getStaticProps: GetStaticProps = async () => {
@@ -53,8 +74,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Home: React.FC<IData> = ({ data }) => {
-  React.useEffect(() => {}, []);
-  console.log(data.setting);
+  console.log(data);
 
   return (
     <div className={styles.container}>
@@ -62,6 +82,7 @@ const Home: React.FC<IData> = ({ data }) => {
       <div className={styles.container_sections}>
         <Hero hero={data.setting?.hero} />
         <CategoriesCards categories={data.categories} />
+        <PostCards posts={data.posts} limit={3} />
       </div>
       <Footer />
     </div>

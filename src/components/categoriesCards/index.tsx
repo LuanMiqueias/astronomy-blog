@@ -10,11 +10,14 @@ export const CategoriesCards: React.FC<IProps> = ({ categories }) => {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        {categories.map((category) => {
-          return (
-            <CategoriesCardsItem key={category.slug} category={category} />
-          );
-        })}
+        <h2>Categories</h2>
+        <nav className={styles.container_categories_cards}>
+          {categories.map((category) => {
+            return (
+              <CategoriesCardsItem key={category.slug} category={category} />
+            );
+          })}
+        </nav>
       </div>
     </div>
   );

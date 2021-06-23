@@ -11,10 +11,9 @@
   line-height: 2;
   font-size: 1.2rem;
 }
-.container_categories_cards{
+.container_posts_cards{
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   gap:16px;
   flex-wrap: wrap;
 }
