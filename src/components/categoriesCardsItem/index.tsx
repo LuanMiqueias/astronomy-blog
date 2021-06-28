@@ -1,10 +1,10 @@
 import Link from "next/link";
 import React from "react";
-import { IDataCategories } from "../../types/settings";
+import { ICategories } from "../../types/categories";
 import styles from "./style.module.css";
 
 interface IProps {
-  category: IDataCategories;
+  category: ICategories;
 }
 export const CategoriesCardsItem: React.FC<IProps> = ({ category }) => {
   return (
