@@ -10,7 +10,7 @@ import { Footer } from "../components/footer";
 
 import { CategoriesCards } from "../components/categoriesCards";
 import { PostCards } from "../components/postCards";
-import { IPosts } from "../types/posts";
+import { IPostsCards } from "../types/posts";
 
 import settings from "../services/staticData/menuItems.json";
 
@@ -21,7 +21,7 @@ export const getStaticProps: GetStaticProps = async () => {
     headers: { "Content-Type": "application/json" },
     data: { ...GET_LAST_POSTS },
   });
-  const data: IPosts[] = responce.data.data;
+  const data: IPostsCards[] = responce.data.data;
   return {
     props: { data },
   };
@@ -29,7 +29,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 interface IProps {
   data: {
-    posts: IPosts[];
+    posts: IPostsCards[];
   };
 }
 const Home: React.FC<IProps> = ({ data }) => {

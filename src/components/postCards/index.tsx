@@ -1,10 +1,10 @@
 import React from "react";
-import { IPosts } from "../../types/posts";
+import { IPostsCards } from "../../types/posts";
 import { PostCardItem } from "../postCardItem";
 import styles from "./style.module.css";
 
 interface IProps {
-  posts: IPosts[];
+  posts: IPostsCards[];
   limit?: number;
 }
 export const PostCards: React.FC<IProps> = ({ posts, limit }) => {

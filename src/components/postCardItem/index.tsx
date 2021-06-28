@@ -1,10 +1,10 @@
 import Link from "next/link";
 import React from "react";
-import { IPosts } from "../../types/posts";
+import { IPostsCards } from "../../types/posts";
 import styles from "./style.module.css";
 
 interface IProps {
-  post: IPosts;
+  post: IPostsCards;
 }
 export const PostCardItem: React.FC<IProps> = ({ post }) => {
   return (
