@@ -2,9 +2,9 @@ import React from "react";
 import { GetStaticProps } from "next";
 import { api } from "../../services/api";
 import { GET_POSTS, GET_POSTS_SLUG } from "../../services/graphql/queries";
-import styles from "../../styles/pages/home.module.css";
 import { IDataPosts, IPosts } from "../../types/posts";
 
+import styles from "./style.module.css";
 export const getStaticPaths = async () => {
   const responce = await api({
     url: "",
@@ -41,7 +41,7 @@ interface IData {
 const Posts: React.FC<IData> = ({ data }) => {
   return data ? (
     <div className={styles.container}>
-      <div className={styles.container_sections}>
+      <div className={styles.content}>
         <h1>{data.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: data.content }}></div>
       </div>

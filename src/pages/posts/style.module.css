@@ -1,0 +1,36 @@
+.container{
+  width: 100%;
+  padding: 44px 16px;
+}
+.content{
+  width: 100%;
+  max-width: 800px;
+  margin:0 auto;
+}
+.container  *{
+  font-family: 'Lato';
+  font-size: 1.1rem;
+  color:var(--text);
+
+}
+.container h1,
+.container h2,
+.container h3,
+.container h4,
+.container h5,
+.container h6{
+  color:var(--title-dark);
+  font-weight: 700;
+}
+.container h1{
+  color:var(--title-dark);
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 1.5rem 0;
+}
+.container h2{
+  color:var(--title-dark);
+  font-weight: 700;
+  font-size: 1.5rem;
+    margin: .5rem 0;
+}
