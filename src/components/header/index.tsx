@@ -3,13 +3,14 @@ import Link from "next/link";
 
 import styles from "./style.module.css";
 import { useRouter } from "next/router";
-import { IDataCategories } from "../../types/settings";
+import { ICategories } from "../../types/categories";
+
 interface IProps {
   logo: {
     url: string;
     altText: string;
   };
-  categories: IDataCategories[];
+  categories: ICategories[];
 }
 export const Header: React.FC<IProps> = ({ categories, logo }) => {
   const router = useRouter();
@@ -28,7 +29,7 @@ export const Header: React.FC<IProps> = ({ categories, logo }) => {
             </a>
           </Link>
           {categories?.map((category, index) => {
-            if (index > 4) return;
+            if (index > 3) return;
             return (
               <Link
                 href={{

@@ -1,10 +1,10 @@
 import React from "react";
-import { IDataPosts } from "../../types/settings";
+import { IPosts } from "../../types/posts";
 import { PostCardItem } from "../postCardItem";
 import styles from "./style.module.css";
 
 interface IProps {
-  posts: IDataPosts[];
+  posts: IPosts[];
   limit?: number;
 }
 export const PostCards: React.FC<IProps> = ({ posts, limit }) => {

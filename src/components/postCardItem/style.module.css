@@ -4,6 +4,7 @@
 }
 
 .container{
+  cursor: pointer;
   width: 100%;
   flex:1;
   height: 300px;

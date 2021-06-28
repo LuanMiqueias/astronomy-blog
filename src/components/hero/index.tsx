@@ -2,25 +2,19 @@ import React from "react";
 import styles from "./style.module.css";
 
 interface IProps {
-  hero?: {
-    title?: string;
-    cover?: {
-      url: string;
-    }[];
+  cover?: {
+    url: string;
   };
 }
-export const Hero: React.FC<IProps> = ({ hero }) => {
+export const Hero: React.FC<IProps> = ({ cover, children }) => {
   return (
     <div
       className={styles.container}
-      style={{ background: `url('${hero.cover[0]?.url}')` }}
+      style={{
+        background: `url('${cover?.url}') no-repeat center top / cover`,
+      }}
     >
-      <div className={styles.content}>
-        <h1 className={styles.title}>
-          Fique por dentro de tudo que acontece no mundo da{" "}
-          <span>astronomia</span>
-        </h1>
-      </div>
+      <div className={styles.content}>{children}</div>
     </div>
   );
 };
