@@ -1,0 +1,27 @@
+.container{
+  width: 100%;
+  background-color: #fff;
+  padding: 1rem 2rem;
+}
+.content{
+  width: 100%;
+  max-width: 1200px;
+  margin:0 auto;
+}
+.container_allPosts{
+  min-height: 100vh;
+  margin: 0 auto;
+  max-width: var(--maxWidth);
+  display: grid;
+  gap:44px;
+}
+.container_allPosts_one_column{
+  grid-template-columns: 1fr;
+}
+.container_allPosts_two_columns{
+  grid-template-columns: auto 300px;
+}
+.container_filter{
+  width: 100%;
+  background: #fff;
+}

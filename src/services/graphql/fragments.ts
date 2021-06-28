@@ -41,6 +41,7 @@ export const fragments = {
       title
       slug
       excerpt
+      published_at
       author {
         name
         slug

@@ -11,6 +11,7 @@ import { PostCards } from "../../components/postCards";
 import { IPosts } from "../../types/posts";
 import { ICategories } from "../../types/categories";
 import { Hero } from "../../components/hero";
+import { AllPosts } from "../../components/AllPosts";
 
 interface IProps {
   data: {
@@ -51,7 +52,7 @@ const Categories: React.FC<IProps> = ({ data }) => {
   return data ? (
     <div className={styles.container}>
       <div className={styles.container_sections}>
-        <PostCards posts={data.posts} />
+        <AllPosts allowFilter={true} posts={data.posts} />
       </div>
     </div>
   ) : (

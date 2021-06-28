@@ -2,7 +2,7 @@ import React from "react";
 import { GetStaticProps } from "next";
 
 import { api } from "../services/api";
-import { GET_LAST_POSTS, GET_POSTS } from "../services/graphql/queries";
+import { GET_LAST_POSTS } from "../services/graphql/queries";
 import styles from "../styles/pages/home.module.css";
 
 import { Hero } from "../components/hero";
@@ -13,6 +13,7 @@ import { PostCards } from "../components/postCards";
 import { IPostsCards } from "../types/posts";
 
 import settings from "../services/staticData/menuItems.json";
+import { AllPosts } from "../components/AllPosts";
 
 export const getStaticProps: GetStaticProps = async () => {
   const responce = await api({
@@ -42,8 +43,16 @@ const Home: React.FC<IProps> = ({ data }) => {
             <span>astronomia</span>
           </h1>
         </Hero>
-        <CategoriesCards categories={settings.data.categories} />
-        <PostCards posts={data.posts} limit={3} />
+        <div className={styles.content}>
+          <CategoriesCards categories={settings.data.categories} />
+          <PostCards
+            posts={data.posts}
+            limit={3}
+            type="fullCover"
+            title="Latest posts"
+          />
+          <AllPosts posts={data.posts} allowFilter={true} />
+        </div>
       </div>
       <Footer />
     </div>

@@ -16,7 +16,10 @@
 :root{
   --primary-color:#030d11;
   --secondary-color:#ED1549;
+
+  --category-color:rgb(0, 152, 212);
   --gray:#eeeeee;
+  --gray-dark:#a0a0a0;
   --white:#ffffff;
   
   --header-light:#FFF;
@@ -26,11 +29,15 @@
   --title-dark:#03141B;
 
   --text:#4e4e4e;
-  --text-light:#DCDCDC;
+  --text-light:#bbbbbb;
 
   --font-bold:800;
   --font-normal:400;
   --font-light:200;
+
+  --maxWidth:1100px;
+
+  --background-body:#F5F5F5;
 }
 
 html,
@@ -39,6 +46,10 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+body{
+  background:#F5F5F5
 }
 
 a {
