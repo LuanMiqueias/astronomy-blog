@@ -1,6 +1,5 @@
 .container{
   width: 100%;
-
 }
 .content{
   width: 100%;
@@ -16,5 +15,26 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap:16px;
-  flex-wrap: wrap;
+}
+
+
+@media(max-width:768px){
+  .container_categories_cards{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width:512px){
+  .container_categories_cards{
+
+    display: flex;
+    padding: 0rem 100px 1rem 100px;
+    overflow-y: scroll;
+    scroll-snap-type: both mandatory;
+  }
+  .container_categories_cards > *{
+    scroll-snap-stop: normal;
+    scroll-snap-align: start;
+    scroll-padding: 0 100px;
+  }
 }
