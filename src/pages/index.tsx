@@ -39,7 +39,7 @@ const Home: React.FC<IProps> = ({ data }) => {
       <div className={styles.container_sections}>
         <Hero cover={settings.data.setting.hero.cover[0]}>
           <h1 className={styles.title}>
-            Fique por dentro de tudo que acontece no mundo da{" "}
+            Fique por dentro de tudo que acontece no mundo da
             <span>astronomia</span>
           </h1>
         </Hero>

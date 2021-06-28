@@ -31,6 +31,7 @@
   font-family: 'sansation';
 }
 .title span{
+  margin: 0 .77rem;
   max-width: inherit;
   font-size: inherit;
   font-weight:inherit;
@@ -38,3 +39,11 @@
   color:var(--secondary-color)
 }
 
+@media(max-width:768px){
+  .content{
+    padding:0 2rem
+  }
+  .title{
+    font-size: 2rem;
+  }
+}

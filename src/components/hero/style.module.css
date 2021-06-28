@@ -17,3 +17,9 @@
   justify-content: flex-start;
   padding: 0 1rem;
 }
+
+@media(max-width:768px){
+  .content{
+    padding:0 2rem
+  }
+}
