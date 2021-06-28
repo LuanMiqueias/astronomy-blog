@@ -2,7 +2,7 @@ import React from "react";
 import { GetStaticProps } from "next";
 
 import { api } from "../services/api";
-import { GET_SETTINGS } from "../services/graphql/queries";
+import { GET_POSTS } from "../services/graphql/queries";
 import styles from "../styles/pages/home.module.css";
 
 import { Header } from "../components/header";
@@ -11,77 +11,30 @@ import { Footer } from "../components/footer";
 
 import { CategoriesCards } from "../components/categoriesCards";
 import { PostCards } from "../components/postCards";
+import { IData, IDataCategories } from "../types/settings";
+import { IPosts } from "../types/posts";
 
-export interface IDataSettings {
-  blogName: string;
-  BlogDescription: string;
-  logo: {
-    url: string;
-    altText: string;
-  };
-  menuLink?: [];
-  hero?: {
-    title?: string;
-    cover?: {
-      url: string;
-    }[];
-  };
-}
-export interface IDataCategories {
-  name: string;
-  slug: string;
-  cover: {
-    url: string;
-  };
-}
-export interface IDataPosts {
-  id: string;
-  title: string;
-  slug: string;
-  excerpt: string;
-  published_at: string;
-  category: {
-    name: string;
-    slug: string;
-  };
-  tags: {
-    name: string;
-    slug: string;
-  };
-  cover: {
-    url: string;
-    altText: string;
-  };
-}
-interface IData {
-  data: {
-    setting: IDataSettings;
-    categories: IDataCategories[];
-    posts: IDataPosts[];
-  };
-}
+import settings from "../services/staticData/menuItems.json";
+
 export const getStaticProps: GetStaticProps = async () => {
   const responce = await api({
     url: "",
     method: "post",
     headers: { "Content-Type": "application/json" },
-    data: { ...GET_SETTINGS },
+    data: { ...GET_POSTS },
   });
-  const data: IData = responce.data.data;
+  const data: IPosts[] = responce.data.data;
   return {
     props: { data },
   };
 };
 
 const Home: React.FC<IData> = ({ data }) => {
-  console.log(data);
-
   return (
     <div className={styles.container}>
-      <Header categories={data.categories} logo={data.setting.logo} />
       <div className={styles.container_sections}>
-        <Hero hero={data.setting?.hero} />
-        <CategoriesCards categories={data.categories} />
+        <Hero hero={settings.data.setting.hero} />
+        <CategoriesCards categories={settings.data.categories} />
         <PostCards posts={data.posts} limit={3} />
       </div>
       <Footer />

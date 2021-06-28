@@ -3,13 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "deps": "node ./src/deps",
+    "dev": "yarn deps && next dev",
+    "build": "yarn deps && next build",
+    "start": "yarn deps && next start"
   },
   "dependencies": {
     "axios": "^0.21.1",
     "next": "10.2.1",
+    "node-fetch": "^2.6.1",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },

@@ -1,5 +1,5 @@
 import React from "react";
-import { IDataCategories } from "../../pages";
+import { IDataCategories } from "../../types/settings";
 import { CategoriesCardsItem } from "../categoriesCardsItem";
 import styles from "./style.module.css";
 

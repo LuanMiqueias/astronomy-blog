@@ -1,5 +1,5 @@
 import React from "react";
-import { IDataPosts } from "../../pages";
+import { IDataPosts } from "../../types/settings";
 import { PostCardItem } from "../postCardItem";
 import styles from "./style.module.css";
 

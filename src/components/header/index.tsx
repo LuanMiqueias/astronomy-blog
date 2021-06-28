@@ -1,9 +1,9 @@
 import React from "react";
 import Link from "next/link";
 
-import { IDataCategories } from "../../pages";
 import styles from "./style.module.css";
 import { useRouter } from "next/router";
+import { IDataCategories } from "../../types/settings";
 interface IProps {
   logo: {
     url: string;
@@ -16,14 +16,18 @@ export const Header: React.FC<IProps> = ({ categories, logo }) => {
   return (
     <header className={styles.header}>
       <div className={styles.content}>
-        <img src={logo?.url} alt={logo?.altText} className={styles.logo} />
+        <Link href="/">
+          <a>
+            <img src={logo?.url} alt={logo?.altText} className={styles.logo} />
+          </a>
+        </Link>
         <nav className={styles.navbar}>
           <Link href="/">
-            <a className={router.pathname === "/" ? styles.activeLink : ""}>
+            <a className={router.asPath === "/" ? styles.activeLink : ""}>
               Home
             </a>
           </Link>
-          {categories.map((category, index) => {
+          {categories?.map((category, index) => {
             if (index > 4) return;
             return (
               <Link
@@ -33,7 +37,15 @@ export const Header: React.FC<IProps> = ({ categories, logo }) => {
                 }}
                 key={category.slug}
               >
-                {category.name}
+                <a
+                  className={
+                    router.asPath === `/categories/${category.slug}`
+                      ? styles.activeLink
+                      : ""
+                  }
+                >
+                  {category.name}
+                </a>
               </Link>
             );
           })}

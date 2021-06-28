@@ -1,8 +1,10 @@
 import React from "react";
 import Head from "next/head";
 import "../styles/globals.css";
+import { Header } from "../components/header";
+import settings from "../services/staticData/menuItems.json";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ data, Component, pageProps }) {
   return (
     <>
       <Head>
@@ -15,6 +17,10 @@ function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
+      <Header
+        categories={settings.data.categories}
+        logo={settings.data.setting.logo}
+      />
       <Component {...pageProps} />
     </>
   );

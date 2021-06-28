@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { IDataCategories } from "../../pages";
+import { IDataCategories } from "../../types/settings";
 import styles from "./style.module.css";
 
 interface IProps {
