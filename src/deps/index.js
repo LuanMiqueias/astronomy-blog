@@ -1,3 +1,6 @@
+require("dotenv").config({
+  path: ".env",
+});
 const fs = require("fs");
 const fetch = require("node-fetch");
 
@@ -51,7 +54,7 @@ async function getMenuItems() {
   `,
   };
 
-  const responce = await fetch("http://localhost:1337/graphql", {
+  const responce = await fetch(process.env.BASE_URL_API, {
     method: "post",
     body: JSON.stringify({ ...query }),
     headers: { "Content-Type": "application/json" },
