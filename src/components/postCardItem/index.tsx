@@ -17,8 +17,6 @@ export const PostCardItem: React.FC<IProps> = ({ post }) => {
       <div className={styles.container}>
         <div className={styles.text_block}>
           <div className={styles.post_header}>
-            <p>{formateDate(post.published_at)}</p>
-            <span className={styles.dot}></span>
             <Link
               href={{
                 pathname: "/categories/[slug]",
@@ -27,6 +25,8 @@ export const PostCardItem: React.FC<IProps> = ({ post }) => {
             >
               <a className={styles.post_category}>{post.category.name}</a>
             </Link>
+            <span className={styles.dot}></span>
+            <p>{formateDate(post.published_at)}</p>
           </div>
           <div className={styles.text}>
             <h2>{post.title}</h2>

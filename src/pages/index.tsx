@@ -51,8 +51,8 @@ const Home: React.FC<IProps> = ({ data }) => {
             type="fullCover"
             title="Latest posts"
           />
-          <AllPosts posts={data.posts} allowFilter={true} />
         </div>
+        <AllPosts posts={data.posts} allowFilter={true} />
       </div>
       <Footer />
     </div>
