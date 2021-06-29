@@ -66,14 +66,8 @@ a {
 }
 
 
-@media(min-width:764px){
+@media(max-width:764px){
   html{
     font-size: 84%
-  }
-}
-
-@media(min-width:1400px){
-  html{
-    font-size: 110%
   }
 }
