@@ -16,3 +16,9 @@
   gap:16px;
   flex-wrap: wrap;
 }
+
+@media(max-width:768px){
+  .container_posts_cards{
+    flex-direction: column;
+  }
+}

@@ -20,7 +20,7 @@ export const PostCards: React.FC<IProps> = ({
     <div className={styles.container}>
       <div className={styles.content}>
         {title && <h2>{title}</h2>}
-        <nav className={styles.container_posts_cards}>
+        <div className={styles.container_posts_cards}>
           {posts.map((post, index) => {
             if (limit && index >= limit) return;
 
@@ -30,7 +30,7 @@ export const PostCards: React.FC<IProps> = ({
               return <PostCardItem key={post.slug} post={post} />;
             }
           })}
-        </nav>
+        </div>
       </div>
     </div>
   );

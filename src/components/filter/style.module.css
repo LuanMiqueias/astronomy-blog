@@ -3,11 +3,8 @@
   max-height: 90vh;
   position: sticky;
   top:calc(5vh + 3rem);
-  /* background: #fff; */
   border:5px;
   border-radius: 5px;
-
-  /* box-shadow: 0 0 30px rgba(0, 0, 0, 0.05); */
 
   padding: 2rem 1rem 2rem 3rem;
   border-left:1px solid var(--gray)
@@ -52,4 +49,12 @@
 }
 .input_block button:hover{
   filter: brightness(70%);
+}
+
+@media(max-width:768px){
+  .filter{
+    border-left: 0;
+    position: initial;
+    padding: 1rem 0 0 0;
+  }
 }

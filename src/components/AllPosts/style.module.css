@@ -25,3 +25,10 @@
   width: 100%;
   background: #fff;
 }
+
+@media(max-width:768px){
+  .container_allPosts, .container_allPosts_one_column, .container_allPosts_two_columns{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}

@@ -8,8 +8,8 @@
   width: 100%;
   flex:1;
   height: 300px;
-  flex-basis: calc(50% - 32px);
   overflow: hidden;
+  flex-basis: calc(50% - 32px);
   border-radius: 5px;
   padding: 1.5rem 1.5rem 2rem;
 
@@ -58,4 +58,10 @@
   font-size: 1rem;
   color:var(--text-light);
   max-width: 540px;
+}
+
+@media(max-width:768px){
+  .container{
+    gap:44px;    
+  }
 }
