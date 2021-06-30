@@ -14,29 +14,24 @@ export const PostCardItem: React.FC<IProps> = ({ post }) => {
         query: { slug: post.slug },
       }}
     >
-      <div className={styles.container}>
-        <div className={styles.text_block}>
-          <div className={styles.post_header}>
-            <Link
-              href={{
-                pathname: "/categories/[slug]",
-                query: { slug: post.category.slug },
-              }}
-            >
-              <a className={styles.post_category}>{post.category.name}</a>
-            </Link>
-            <span className={styles.dot}></span>
-            <p>{formateDate(post.published_at)}</p>
+      <a>
+        <div className={styles.container}>
+          <div className={styles.text_block}>
+            <div className={styles.post_header}>
+              <p className={styles.category_name}>{post.category.name}</p>
+              <span className={styles.dot}></span>
+              <p>{formateDate(post.published_at)}</p>
+            </div>
+            <div className={styles.text}>
+              <h2>{post.title}</h2>
+              <p>{post.excerpt}</p>
+            </div>
           </div>
-          <div className={styles.text}>
-            <h2>{post.title}</h2>
-            <p>{post.excerpt}</p>
+          <div className={styles.image_post}>
+            <img src={post.cover.url} alt={post.cover.altText} />
           </div>
         </div>
-        <div className={styles.image_post}>
-          <img src={post.cover.url} alt={post.cover.altText} />
-        </div>
-      </div>
+      </a>
     </Link>
   );
 };

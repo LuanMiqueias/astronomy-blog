@@ -25,8 +25,7 @@
   border-bottom: 1px solid var(--gray);
 }
 .container:hover{
-
-  opacity: .85;
+  opacity: .9;
   transform: translateX(5px);
 }
 .text_block{
@@ -47,7 +46,7 @@
   border-radius: 4px;
   background: var(--text-light);
 }
-.post_category{
+.category_name{
   font-weight: var(--font-bold);
   font-size: .75rem;
   text-transform: uppercase;

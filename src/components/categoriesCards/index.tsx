@@ -10,7 +10,6 @@ export const CategoriesCards: React.FC<IProps> = ({ categories }) => {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <h2>Categories</h2>
         <div className={styles.container_categories_cards}>
           {categories.map((category) => {
             return (

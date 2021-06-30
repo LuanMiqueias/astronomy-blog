@@ -28,14 +28,21 @@ export const GET_POSTS = {
     }
   `,
 };
-export const GET_LAST_POSTS = {
+export const GET_INITIAL_DATA = {
   query: gql`
     ${fragments.image}
     ${fragments.post_card}
 
-    query GET_LAST_POSTS {
+    query GET_INITIAL_DATA {
       posts(sort: "published_at:desc") {
         ...post_card
+      }
+      categories {
+        name
+        slug
+        cover {
+          ...image
+        }
       }
     }
   `,

@@ -5,14 +5,15 @@
 }
 .content{
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--maxWidth);
   margin:0 auto;
 }
 .container_allPosts{
-  min-height: 100vh;
+  display: grid;
+  justify-content: flex-start;
+  align-items: flex-start;
   margin: 0 auto;
   max-width: var(--maxWidth);
-  display: grid;
   gap:44px;
 }
 .container_allPosts_one_column{

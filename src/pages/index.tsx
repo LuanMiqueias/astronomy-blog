@@ -2,7 +2,7 @@ import React from "react";
 import { GetStaticProps } from "next";
 
 import { api } from "../services/api";
-import { GET_LAST_POSTS } from "../services/graphql/queries";
+import { GET_INITIAL_DATA } from "../services/graphql/queries";
 import styles from "../styles/pages/home.module.css";
 
 import { Hero } from "../components/hero";
@@ -14,15 +14,20 @@ import { IPostsCards } from "../types/posts";
 
 import settings from "../services/staticData/menuItems.json";
 import { AllPosts } from "../components/AllPosts";
+import { ICategories } from "../types/categories";
 
+interface IDataAPI {
+  posts: IPostsCards[];
+  categories: ICategories[];
+}
 export const getStaticProps: GetStaticProps = async () => {
   const responce = await api({
     url: "",
     method: "post",
     headers: { "Content-Type": "application/json" },
-    data: { ...GET_LAST_POSTS },
+    data: { ...GET_INITIAL_DATA },
   });
-  const data: IPostsCards[] = responce.data.data;
+  const data: IDataAPI[] = responce.data.data;
   return {
     props: { data },
   };
@@ -31,6 +36,7 @@ export const getStaticProps: GetStaticProps = async () => {
 interface IProps {
   data: {
     posts: IPostsCards[];
+    categories: ICategories[];
   };
 }
 const Home: React.FC<IProps> = ({ data }) => {
@@ -45,14 +51,12 @@ const Home: React.FC<IProps> = ({ data }) => {
         </Hero>
         <div className={styles.content}>
           <CategoriesCards categories={settings.data.categories} />
-          <PostCards
-            posts={data.posts}
-            limit={3}
-            type="fullCover"
-            title="Latest posts"
-          />
         </div>
-        <AllPosts posts={data.posts} allowFilter={true} />
+        <AllPosts
+          posts={data.posts}
+          allowFilter={true}
+          categories={data.categories}
+        />
       </div>
       <Footer />
     </div>
