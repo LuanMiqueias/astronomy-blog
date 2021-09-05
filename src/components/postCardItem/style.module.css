@@ -1,97 +1,98 @@
-.container{
+.container {
   cursor: pointer;
   width: 100%;
-  flex:1;
-  flex-basis:100%;
+  flex: 1;
+  flex-basis: 100%;
   overflow: hidden;
   padding: 2rem 1.5rem;
 
-  display:grid;
+  display: grid;
   grid-template-columns: 55% 40%;
-  gap:32px;
+  gap: 32px;
   grid-template-rows: 160px;
   align-items: flex-start;
   justify-content: flex-start;
 
-  background-size:cover;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  transition: all .2s;
-  transition-delay: .05s;
+  transition: all 0.2s;
+  transition-delay: 0.05s;
 
   position: relative;
 
   border-bottom: 1px solid var(--gray);
 }
-.container:hover{
-  opacity: .9;
+.container:hover {
+  opacity: 0.9;
   transform: translateX(5px);
 }
-.text_block{
+.text_block {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  gap:8px;
+  gap: 8px;
 }
-.post_header{
+.post_header {
   display: flex;
   align-items: center;
-  gap:8px;
+  gap: 8px;
   color: var(--text-light);
 }
-.dot{
+.dot {
   width: 4px;
   height: 4px;
   border-radius: 4px;
   background: var(--text-light);
+  opacity: 0.5;
 }
-.category_name{
+.category_name {
   font-weight: var(--font-bold);
-  font-size: .75rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   color: var(--category-color);
 
-  transition: all .4s;
+  transition: all 0.4s;
 }
-.post_category:hover{
-  transition: all .2s;
+.post_category:hover {
+  transition: all 0.2s;
   filter: brightness(50%);
 }
 
-.text > h2{
+.text > h2 {
   line-height: 1.5;
   font-size: 1.25rem;
-  color:var(--title-dark);
+  color: var(--title-dark);
   font-weight: var(--font-bold);
 }
-.text > p{
+.text > p {
   font-size: 1rem;
-  color:var(--text);
+  color: var(--text);
   max-width: 540px;
 }
-.image_post{
+.image_post {
   display: flex;
-  flex:1;
+  flex: 1;
   width: 100%;
-  height:100%;
+  height: 100%;
   border-radius: 5px;
   overflow: hidden;
 }
-.image_post img{
-  flex:1;
+.image_post img {
+  flex: 1;
   width: inherit;
-  height:inherit;
+  height: inherit;
   object-fit: cover;
 }
 
-@media(max-width:512px){
-  .container{
-    display:flex;
+@media (max-width: 512px) {
+  .container {
+    display: flex;
     flex-direction: column-reverse;
     padding: 2.5rem 0;
   }
-  .image_post{
+  .image_post {
     height: 150px;
   }
 }

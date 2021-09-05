@@ -5,6 +5,8 @@ import { GET_POSTS, GET_POSTS_SLUG } from "../../services/graphql/queries";
 import { IDataPosts, IPosts } from "../../types/posts";
 
 import styles from "./style.module.css";
+import Link from "next/link";
+import { useFormatDate } from "../../hooks/formatDate";
 export const getStaticPaths = async () => {
   const responce = await api({
     url: "",
@@ -41,7 +43,22 @@ interface IData {
 const Posts: React.FC<IData> = ({ data }) => {
   return data ? (
     <div className={styles.container}>
+      <img src={data.cover.url} alt="" className={styles.post_cover} />
       <div className={styles.content}>
+        <header className={styles.post_header}>
+          <Link href={`/categories/${data.category.slug}`}>
+            <a className={styles.post_category} style={{ backgroundColor: `var(--${data.category.slug})` }}>
+              {data.category.name}
+            </a>
+          </Link>
+          <div className={styles.post_date}>
+            {useFormatDate(data.published_at)} - <a className={styles.post_author}>
+              <Link href={`/authors/${data.author.slug}`}>
+                {data.author.name}
+              </Link>
+            </a>
+          </div>
+        </header>
         <h1>{data.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: data.content }}></div>
       </div>
