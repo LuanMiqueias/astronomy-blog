@@ -1,24 +1,24 @@
-.container{
+.container {
   width: 100%;
-  min-width: 200px;
+  min-width: 250px;
   height: 160px;
-  flex:1;
-  background-size:cover;
+  flex: 1;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 5px;
 
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 
-  color:#fff;
+  color: #fff;
   font-weight: var(--font-bold);
   text-transform: uppercase;
 
-  transition: all .4s;
+  transition: all 0.4s;
 }
-.container:hover{
-  transition: all .2s;
+.container:hover {
+  transition: all 0.2s;
   filter: brightness(80%);
 }
