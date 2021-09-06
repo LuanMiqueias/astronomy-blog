@@ -140,6 +140,7 @@ a.post_category {
   color: inherit;
   font-weight: inherit;
   padding: 0.5rem 1rem;
+  min-width: 180px;
 }
 
 @media (max-width: 512px) {
@@ -155,6 +156,11 @@ a.post_category {
   .content {
     padding: 36px 16px;
   }
+  .content tr td {
+    font-size: 14px;
+    min-width: 250px;
+  }
+
   .content_text * {
     font-size: 1.25rem;
   }
