@@ -1,101 +1,101 @@
-.filter{
+.filter {
   width: 100%;
   height: 90vh;
   position: sticky;
-  top:5vh;
-  border:5px;
+  top: 5vh;
+  border: 5px;
 
   padding: 2rem 1rem 2rem 3rem;
-  border-left:1px solid var(--gray)
+  border-left: 1px solid var(--gray);
 }
-.title_filter{
+.title_filter {
   margin-bottom: 24px;
-  color:var(--title-dark)
+  color: var(--title-dark);
 }
-.input_block{
+.input_block {
   width: 100%;
-  background:var(--background-body);
-  border:none;
+  background: var(--background-body);
+  border: none;
   border-radius: 5px;
   display: flex;
   border-bottom: 1px solid transparent;
-  transition: all .2s;
+  transition: all 0.2s;
 }
-.input_block:focus-within{
+.input_block:focus-within {
   border-color: var(--primary-color);
 }
-.input_block input[type="text"]{
-  padding:1rem 1.5rem;
+.input_block input[type="text"] {
+  padding: 1rem 1.5rem;
   width: 100%;
   height: 100%;
-  border:none;
+  border: none;
   background: none;
   outline: none;
 }
-.search_bar input::placeholder{
-  font-size: .75rem;
-  color:var(--gray-dark);
+.search_bar input::placeholder {
+  font-size: 0.75rem;
+  color: var(--gray-dark);
   text-transform: uppercase;
 }
 
-.input_block button{
-  padding:0 1.25rem;
-  border:none;
+.input_block button {
+  padding: 0 1.25rem;
+  border: none;
   background: none;
 
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all .2s;
+  transition: all 0.2s;
 }
-.input_block button:hover{
+.input_block button:hover {
   filter: brightness(70%);
 }
 
-.categories_checklist{
+.categories_checklist {
   opacity: 0.5;
   display: flex;
   flex-direction: column;
 
-  gap:4px;
-  margin-top:24px;
+  gap: 4px;
+  margin-top: 24px;
   padding: 2rem 1.5rem;
   background-color: var(--background-body);
   border-radius: 5px;
 }
 
-.input_block_checklist{
+.input_block_checklist {
   display: flex;
   align-items: center;
-  gap:8px;
+  gap: 8px;
   width: 100%;
   text-transform: capitalize;
-  font-size: .88rem;
+  font-size: 0.88rem;
   font-weight: var(--font-normal);
-  color:var(--gray-dark);
+  color: var(--gray-dark);
   position: relative;
   user-select: none;
   cursor: not-allowed;
   padding: 0.5rem 0;
 }
-.input_block_checklist input{
-  display:flex;
+.input_block_checklist input {
+  display: flex;
   align-items: center;
   justify-content: center;
 }
-.input_block_checklist input::before{
-  content: '';
+.input_block_checklist input::before {
+  content: "";
   background: #fff;
   width: 1rem;
   height: 1rem;
   border-radius: 12px;
   position: absolute;
-  border:solid 1px var(--gray-dark);
+  border: solid 1px var(--gray-dark);
 }
 
-.input_block_checklist input:checked:after{
-  content: '';
+.input_block_checklist input:checked:after {
+  content: "";
   background: var(--primary-color);
   width: 10px;
   height: 10px;
@@ -103,19 +103,20 @@
   position: absolute;
   opacity: 0;
   transform: scale(2);
-  transition:all .2s;
-  animation: animaInputRadio .1s forwards ease-in;
+  transition: all 0.2s;
+  animation: animaInputRadio 0.1s forwards ease-in;
 }
-@keyframes animaInputRadio{
-  to{
+@keyframes animaInputRadio {
+  to {
     opacity: initial;
     transform: initial;
   }
 }
-@media(max-width:768px){
-  .filter{
+@media (max-width: 768px) {
+  .filter {
     border-left: 0;
     position: initial;
     padding: 1rem 0 0 0;
+    height: fit-content;
   }
 }

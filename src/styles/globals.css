@@ -80,8 +80,22 @@ a {
   font-family: "sansation";
 }
 
+figure.image-style-side {
+  display: flex !important;
+  width: fit-content;
+}
 @media (max-width: 764px) {
   html {
     font-size: 84%;
+  }
+}
+
+.animation_show {
+  animation: show 0.2s forwards;
+}
+@keyframes show {
+  to {
+    transform: initial;
+    opacity: initial;
   }
 }

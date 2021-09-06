@@ -39,12 +39,16 @@ a.post_category {
   gap: 16px;
 }
 .post_date {
-  font-size: 0.88rem;
   opacity: 0.7;
   align-items: center;
   justify-content: center;
 }
+.post_date,
+.post_author {
+  font-size: 16px;
+}
 .post_author a {
+  font-size: inherit;
   text-decoration: underline;
   text-transform: capitalize;
 }
@@ -86,6 +90,7 @@ a.post_category {
 .content * {
   color: var(--text);
 }
+.content p *,
 .content p {
   line-height: 1.4;
   margin-bottom: 8px;
@@ -126,8 +131,16 @@ a.post_category {
 }
 
 @media (max-width: 512px) {
+  .content h1 {
+    font-size: 2.5rem;
+    margin: 36px 0;
+  }
   .content {
-    padding-top: 24px;
+    padding: 44px 24px;
+  }
+  .content p *,
+  .content p {
+    font-size: 1.5rem;
   }
   .post_header {
     flex: 1;

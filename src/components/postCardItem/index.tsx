@@ -16,7 +16,7 @@ export const PostCardItem: React.FC<IProps> = ({ post }) => {
       }}
     >
       <a>
-        <div className={styles.container}>
+        <div className={`${styles.container} animation_show`}>
           <div className={styles.text_block}>
             <div className={styles.post_header}>
               <p className={styles.category_name} style={{ color: `var(--${post.category.slug})` }}>{post.category.name}</p>

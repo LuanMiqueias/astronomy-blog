@@ -5,7 +5,8 @@ import {
   GET_POSTS_BY_CATEGORIES,
 } from "../../services/graphql/queries";
 
-import styles from "../../styles/pages/home.module.css";
+import stylesContainer from "../../styles/pages/home.module.css";
+import styles from "./style.module.css";
 import { Header } from "../../components/header";
 import { PostCards } from "../../components/postCards";
 import { IPosts } from "../../types/posts";
@@ -48,11 +49,10 @@ export async function getStaticProps({ params }) {
 }
 
 const Categories: React.FC<IProps> = ({ data }) => {
-  console.log(data);
   return data ? (
-    <div className={styles.container}>
-      <div className={styles.container_sections}>
-        <AllPosts allowFilter={true} posts={data.posts} />
+    <div className={stylesContainer.container}>
+      <div className={stylesContainer.container_sections}>
+        {data.posts ? <AllPosts allowFilter={true} posts={data.posts} /> : <div className={styles.content_message}><h2>Não há posts nesta categoria</h2></div>}
       </div>
     </div>
   ) : (
