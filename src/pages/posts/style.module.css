@@ -90,8 +90,7 @@ a.post_category {
 .content * {
   color: var(--text);
 }
-.content p *,
-.content p {
+.content_text * {
   line-height: 1.4;
   margin-bottom: 8px;
 }
@@ -123,7 +122,11 @@ a.post_category {
 .content tr:first-child td {
   border: none;
 }
-
+.content table {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+}
 .content tr td {
   color: inherit;
   font-weight: inherit;
@@ -138,9 +141,8 @@ a.post_category {
   .content {
     padding: 44px 24px;
   }
-  .content p *,
-  .content p {
-    font-size: 1.35rem;
+  .content_text * {
+    font-size: 1.25rem;
   }
   .post_header {
     flex: 1;

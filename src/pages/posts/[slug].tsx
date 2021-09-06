@@ -60,7 +60,9 @@ const Posts: React.FC<IData> = ({ data }) => {
           </div>
         </header>
         <h1>{data.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: data.content }}></div>
+        <div className={styles.content_text}>
+          <div dangerouslySetInnerHTML={{ __html: data.content }}></div>
+        </div>
       </div>
     </div>
   ) : (
