@@ -132,7 +132,7 @@ a.post_category {
 
 @media (max-width: 512px) {
   .content h1 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     margin: 36px 0;
   }
   .content {
@@ -140,7 +140,7 @@ a.post_category {
   }
   .content p *,
   .content p {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
   }
   .post_header {
     flex: 1;
