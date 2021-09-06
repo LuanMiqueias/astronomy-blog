@@ -41,7 +41,7 @@ interface IProps {
 }
 const Home: React.FC<IProps> = ({ data }) => {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} animation_show`}>
       <div className={styles.container_sections}>
         <Hero cover={settings.data.setting.hero.cover[0]}>
           <h1 className={styles.title}>

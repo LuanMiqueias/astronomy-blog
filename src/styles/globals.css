@@ -91,6 +91,7 @@ figure.image-style-side {
 }
 
 .animation_show {
+  opacity: 0;
   animation: show 0.2s forwards;
 }
 @keyframes show {

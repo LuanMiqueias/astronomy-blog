@@ -42,7 +42,7 @@ interface IData {
 }
 const Posts: React.FC<IData> = ({ data }) => {
   return data ? (
-    <div className={styles.container}>
+    <div className={`${styles.container} animation_show`}>
       <img src={data.cover.url} alt="" className={styles.post_cover} />
       <div className={styles.content}>
         <header className={styles.post_header}>

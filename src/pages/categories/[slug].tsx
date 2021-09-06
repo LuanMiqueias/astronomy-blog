@@ -50,7 +50,7 @@ export async function getStaticProps({ params }) {
 
 const Categories: React.FC<IProps> = ({ data }) => {
   return data ? (
-    <div className={stylesContainer.container}>
+    <div className={`${stylesContainer.container} animation_show`}>
       <div className={stylesContainer.container_sections}>
         {data.posts ? <AllPosts allowFilter={true} posts={data.posts} /> : <div className={styles.content_message}><h2>Não há posts nesta categoria</h2></div>}
       </div>
