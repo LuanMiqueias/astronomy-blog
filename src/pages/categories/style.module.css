@@ -3,3 +3,6 @@
   text-align: center;
   color: var(--gray-dark);
 }
+.content_message h2 {
+  font-size: 1.25rem;
+}

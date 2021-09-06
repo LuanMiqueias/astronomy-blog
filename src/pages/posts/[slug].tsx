@@ -45,23 +45,25 @@ const Posts: React.FC<IData> = ({ data }) => {
     <div className={`${styles.container} animation_show`}>
       <img src={data.cover.url} alt="" className={styles.post_cover} />
       <div className={styles.content}>
-        <header className={styles.post_header}>
-          <Link href={`/categories/${data.category.slug}`}>
-            <a className={styles.post_category} style={{ backgroundColor: `var(--${data.category.slug})` }}>
-              {data.category.name}
-            </a>
-          </Link>
-          <div className={styles.post_date}>
-            {useFormatDate(data.published_at)} - <a className={styles.post_author}>
-              <Link href={`/authors/${data.author.slug}`}>
-                {data.author.name}
-              </Link>
-            </a>
+        <div className={styles.container_post_content}>
+          <header className={styles.post_header}>
+            <Link href={`/categories/${data.category.slug}`}>
+              <a className={styles.post_category} style={{ backgroundColor: `var(--${data.category.slug})` }}>
+                {data.category.name}
+              </a>
+            </Link>
+            <div className={styles.post_date}>
+              {useFormatDate(data.published_at)} - <a className={styles.post_author}>
+                <Link href={`/authors/${data.author.slug}`}>
+                  {data.author.name}
+                </Link>
+              </a>
+            </div>
+          </header>
+          <h1>{data.title}</h1>
+          <div className={styles.content_text}>
+            <div dangerouslySetInnerHTML={{ __html: data.content }}></div>
           </div>
-        </header>
-        <h1>{data.title}</h1>
-        <div className={styles.content_text}>
-          <div dangerouslySetInnerHTML={{ __html: data.content }}></div>
         </div>
       </div>
     </div>

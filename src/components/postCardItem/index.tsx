@@ -15,8 +15,8 @@ export const PostCardItem: React.FC<IProps> = ({ post }) => {
         query: { slug: post.slug },
       }}
     >
-      <a>
-        <div className={`${styles.container} animation_show`}>
+      <a className={`${styles.container_link_post} animation_show`}>
+        <div className={`${styles.container}`}>
           <div className={styles.text_block}>
             <div className={styles.post_header}>
               <p className={styles.category_name} style={{ color: `var(--${post.category.slug})` }}>{post.category.name}</p>

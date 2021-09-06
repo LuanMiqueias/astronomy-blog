@@ -27,7 +27,7 @@ export const PostCardFullCover: React.FC<IProps> = ({ post }) => {
           }}
         >
           <a>
-            <span className={styles.post_category}>{post.category.name}</span>
+            <span className={styles.post_category} style={{ background: `var(--${post.category.slug})` }}>{post.category.name}</span>
           </a>
         </Link>
         <div className={styles.text_block}>

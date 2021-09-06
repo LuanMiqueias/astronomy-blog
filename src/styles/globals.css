@@ -36,7 +36,7 @@
   --font-normal: 400;
   --font-light: 200;
 
-  --maxWidth: 990px;
+  --maxWidth: 1200px;
 
   --background-body: #f5f5f5;
 
@@ -45,14 +45,14 @@
   --planets: #15ed78;
   --asteroides: #b515ed;
   --discovery: #e99243;
-  --curiosities: #58ecec;
+  --curiosities: #05c9c9;
 
   --missions-hover: #c70c37;
   --events-hover: #053cc7;
   --planets-hover: #09d166;
   --asteroides-hover: #910bc2;
   --discovery-hover: #d37b29;
-  --curiosities-hover: #31dbdb;
+  --curiosities-hover: #05c9c9;
 }
 
 html,

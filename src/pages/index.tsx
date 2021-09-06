@@ -52,6 +52,9 @@ const Home: React.FC<IProps> = ({ data }) => {
         <div className={styles.content}>
           <CategoriesCards categories={settings.data.categories} />
         </div>
+        <div className={styles.content}>
+          <PostCards type="fullCover" posts={data.posts} limit={3} title="Ultimos posts" />
+        </div>
         <AllPosts
           posts={data.posts}
           allowFilter={true}

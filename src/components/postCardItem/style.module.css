@@ -1,3 +1,9 @@
+.container_link_post {
+  width: 100%;
+
+  opacity: 0;
+  transform: scale(0.9);
+}
 .container {
   cursor: pointer;
   width: 100%;
@@ -7,7 +13,7 @@
   padding: 2rem 1.5rem;
 
   display: grid;
-  grid-template-columns: 55% 40%;
+  grid-template-columns: 1fr 43%;
   gap: 32px;
   grid-template-rows: 160px;
   align-items: flex-start;
@@ -23,9 +29,6 @@
   position: relative;
 
   border-bottom: 1px solid var(--gray);
-
-  opacity: 0;
-  transform: scale(0.9);
 }
 .container:hover {
   opacity: 0.9;
